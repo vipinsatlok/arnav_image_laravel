@@ -23,6 +23,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $navData = json_decode(file_get_contents(resource_path('data/navData.json')), true);
+
+        view()->composer('*', function ($view) use ($navData) {
+            $view->with('navLinks', $navData);
+        });
     }
 }

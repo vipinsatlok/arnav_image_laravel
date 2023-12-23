@@ -1,6 +1,12 @@
 @extends("layout")
 
-@section("section")
-<h1>About Page</h1>
 
+<!-- setting title of page -->
+@section("title")
+About page
+@endsection
+
+
+<!-- stating page section -->
+@section("section")
 @endsection

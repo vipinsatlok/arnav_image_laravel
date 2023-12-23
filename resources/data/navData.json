@@ -1,0 +1,8 @@
+[
+    { "slug": "/", "title": "Home" },
+    { "slug": "https://digitalapnao.com/about", "title": "About" },
+    { "slug": "https://digitalapnao.com/contact", "title": "Contact" },
+    { "slug": "https://digitalapnao.com/blog", "title": "Blog" },
+    { "slug": "term-of-use", "title": "Terms of Use" },
+    { "slug": "privacy-policy", "title": "Privacy Policy" }
+]
