@@ -32,6 +32,10 @@ $logoPath = "/images/logo.png";
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet" />
     <title>@yield("title", $siteTitle)</title>
 
+    <!-- tailwind css -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+
     @vite(['resources/css/app.css','resources/js/app.js'])
 
     <style>
@@ -52,11 +56,6 @@ $logoPath = "/images/logo.png";
         @yield("section")
     </main>
     @include("include.footer")
-
-    <a href="https://twitter.com/intent/tweet?url={{ url()->current() }}&text=Your%20Tweet%20Text" target="_blank" rel="noopener noreferrer">
-        Share on Twitter
-    </a>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
 </body>
 
