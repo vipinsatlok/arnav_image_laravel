@@ -11,17 +11,29 @@ class GuestController extends Controller
 
     public function index(Request $request)
     {
-        $page = (int)$request->query('page', 1);
-        $query = $request->search;
-        $perPage = 5;
-        $images = Image::orderBy('created_at', 'desc')->paginate($perPage, ['*'], 'page', $page);
-        $totalPages = (int)ceil($images->total() / $perPage);
+        $query = $request->input('search');
 
         if ($query) {
-            $images = Image::where('title', 'like', "%$query%")->get();
+            $image = Image::where('title', 'like', '%' . $query . '%')
+                ->orWhere('tags', 'like', '%' . $query . '%')
+                ->paginate(4);
+        } else {
+            $image = Image::paginate(4);
         }
 
-        return view("guest.index", compact('images', 'page', 'perPage', 'totalPages'));
+        return view("guest.index", compact('image'));
+    }
+
+    public function getImageData()
+    {
+
+        $image = Image::paginate(4);
+        $html = view("include.homeImages", compact('image'))->render();
+
+        return response()->json([
+            'status' => true,
+            'html' => $html
+        ]);
     }
 
     public function about(Request $request)
@@ -47,13 +59,21 @@ class GuestController extends Controller
 
     public function downlaod(Request $request, $imageId)
     {
-        return view("guest.downlaodImage", ["imageId" => $imageId]);
+        $image = Image::where('file_name', $imageId . '.png')->first();
+        $tags = $image->tags;
+        $title = $image->title;
+
+        $imageData = Image::where('title', 'like', '%' . $title . '%')
+            ->orWhere('tags', 'like', '%' . $tags . '%')
+            ->paginate(20);
+
+        return view("guest.downlaodImage", ["image" => $image, "imageData" => $imageData]);
     }
 
     public function upload(Request $request)
     {
         $request->validate([
-            'file' => 'required|mimes:png,jpg|max:5120',
+            'file' => 'required|mimes:png|max:5120',
             'tags' => 'required|string|max:50',
             'title' => 'required|string'
         ]);

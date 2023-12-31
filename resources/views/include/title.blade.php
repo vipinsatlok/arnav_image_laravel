@@ -1,0 +1,1 @@
+<h1 class="text-2xl font-semibold my-5">{{ $title }}</h1>

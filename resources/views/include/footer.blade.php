@@ -6,25 +6,25 @@ $teligram = "https://t.me/digitalapnao_in";
 
 @endphp
 
-<footer class="bg-white dark:bg-gray-900">
+<footer class="bg-white">
     <div class="mx-auto w-full max-w-screen-xl">
-        <div class="px-4 py-6 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
-            <span class="text-sm text-gray-500 dark:text-gray-300 sm:text-center">© 2023 <a href="/">{{ $siteName  }}</a>. All Rights Reserved.
+        <div class="px-4 py-6 bg-gray-100 md:flex md:items-center md:justify-between">
+            <span class="text-sm text-gray-500 sm:text-center">© 2023 <a href="/">{{ $siteName  }}</a>. All Rights Reserved.
             </span>
             <div class="flex mt-4 justify-start md:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
-                <a href="{{ $facebook }}" class="text-gray-400 hover:text-gray-900 dark:hover:text-white">
+                <a href="{{ $facebook }}" class="text-gray-400 hover:text-gray-900">
                     <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
                         <path fill-rule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clip-rule="evenodd" />
                     </svg>
                     <span class="sr-only">Facebook page</span>
                 </a>
-                <a href="{{ $teligram }}" class="text-gray-400 hover:text-gray-900 dark:hover:text-white">
+                <a href="{{ $teligram }}" class="text-gray-400 hover:text-gray-900">
                     <svg class="text-gray-400 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="currentColor">
                         <path d="M46.137,6.552c-0.75-0.636-1.928-0.727-3.146-0.238l-0.002,0C41.708,6.828,6.728,21.832,5.304,22.445	c-0.259,0.09-2.521,0.934-2.288,2.814c0.208,1.695,2.026,2.397,2.248,2.478l8.893,3.045c0.59,1.964,2.765,9.21,3.246,10.758	c0.3,0.965,0.789,2.233,1.646,2.494c0.752,0.29,1.5,0.025,1.984-0.355l5.437-5.043l8.777,6.845l0.209,0.125	c0.596,0.264,1.167,0.396,1.712,0.396c0.421,0,0.825-0.079,1.211-0.237c1.315-0.54,1.841-1.793,1.896-1.935l6.556-34.077	C47.231,7.933,46.675,7.007,46.137,6.552z M22,32l-3,8l-3-10l23-17L22,32z" />
                     </svg>
                     <span class="sr-only">Twitter page</span>
                 </a>
-                <a href="{{ $insatgram }}" class="text-gray-400 hover:text-gray-900 dark:hover:text-white">
+                <a href="{{ $insatgram }}" class="text-gray-400 hover:text-gray-900">
                     <svg fill="currentColor" class="h-4 w-4" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -41,7 +41,7 @@ $teligram = "https://t.me/digitalapnao_in";
                     </svg>
                     <span class="sr-only">Insatgram</span>
                 </a>
-                <a href="{{ $pinterest }}" class="text-gray-400 hover:text-gray-900 dark:hover:text-white">
+                <a href="{{ $pinterest }}" class="text-gray-400 hover:text-gray-900">
                     <svg class="w-4 h-4" fill="currentColor" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>

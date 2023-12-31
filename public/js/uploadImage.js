@@ -5,6 +5,8 @@ const tilte = document.getElementById("title");
 const tags = document.getElementById("tags");
 const button = document.getElementById("button");
 const imageSet = document.getElementById("imageSet");
+const image_show = document.getElementById("image_show");
+const image_field = document.getElementById("image_field");
 
 let singleFile;
 
@@ -14,6 +16,10 @@ file.addEventListener("change", (e) => {
     if (file) {
         const imageUrl = URL.createObjectURL(file);
         imageSet.src = imageUrl;
+
+        image_field.classList.add("hidden");
+        image_show.classList.remove("hidden");
+
         inputSec.classList.remove("hidden");
         inputSec.classList.add("flex");
         singleFile = file;

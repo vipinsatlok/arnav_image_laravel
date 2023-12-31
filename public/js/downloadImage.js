@@ -12,6 +12,7 @@ function downloadImage() {
 
     document.body.removeChild(downloadLink);
 }
+const buttonHtml = document.getElementById("imageDownloadButton").innerHTML;
 
 function updateTimer() {
     const button = document.getElementById("imageDownloadButton");
@@ -19,7 +20,7 @@ function updateTimer() {
 
     if (countdown === 0) {
         clearInterval(timerInterval);
-        button.innerText = `Download now`;
+        button.innerHTML = buttonHtml;
         downloadImage();
     }
 

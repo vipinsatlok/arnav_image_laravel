@@ -2,17 +2,17 @@
 
 @section("section")
 <section class="max-w-screen-xl flex-col flex flex-wrap items-start justify-between mx-auto p-4">
-    <h1 class="text-3xl mb-5 ld:text-4xl font-bold dark:text-white">Term of use For DA FreePng</h1>
+    <h1 class="text-3xl mb-5 ld:text-4xl font-bold">Term of use For DA FreePng</h1>
 
     <div class="mb-8">
-        <h2 class="text-lg mb-1 font-semibold dark:text-white">Welcome to DA FreePng</h2>
+        <h2 class="text-lg mb-1 font-semibold">Welcome to DA FreePng</h2>
         Da freepng is a platform where users can freely submit and download PNG images. By using our service, you agree to the following terms of use:
         </p>
     </div>
 
     <div class="mb-8">
-        <h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">1. Access and Use</h2>
-        <ul class="space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
+        <h2 class="mb-2 text-lg font-semibold text-gray-900">1. Access and Use</h2>
+        <ul class="space-y-1 text-gray-500 list-disc list-inside">
             <li>
                 You may access and use Da freepng for personal and non-commercial purposes only.
             </li>
@@ -26,8 +26,8 @@
     </div>
 
     <div class="mb-8">
-        <h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">2. Intellectual Property Rights</h2>
-        <ul class="space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
+        <h2 class="mb-2 text-lg font-semibold text-gray-900">2. Intellectual Property Rights</h2>
+        <ul class="space-y-1 text-gray-500 list-disc list-inside">
             <li>
                 Da freepng does not claim ownership of the images submitted by users.
             </li>
@@ -41,8 +41,8 @@
     </div>
 
     <div class="mb-8">
-        <h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">3. Modifications and Use at Your Own Risk</h2>
-        <ul class="space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
+        <h2 class="mb-2 text-lg font-semibold text-gray-900">3. Modifications and Use at Your Own Risk</h2>
+        <ul class="space-y-1 text-gray-500 list-disc list-inside">
             <li>
                 You are free to modify the images you download from Da freepng.
             </li>
@@ -53,8 +53,8 @@
     </div>
 
     <div class="mb-8">
-        <h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">4. Limitation of Liability</h2>
-        <ul class="space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
+        <h2 class="mb-2 text-lg font-semibold text-gray-900">4. Limitation of Liability</h2>
+        <ul class="space-y-1 text-gray-500 list-disc list-inside">
             <li>
                 In no event shall Da freepng be liable for any damages whatsoever arising out of the use of or inability to use Da freepng, including, without limitation, direct, indirect, incidental, punitive, and consequential damages.
             </li>
@@ -62,8 +62,8 @@
     </div>
 
     <div class="mb-8">
-        <h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">5. Indemnification</h2>
-        <ul class="space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
+        <h2 class="mb-2 text-lg font-semibold text-gray-900">5. Indemnification</h2>
+        <ul class="space-y-1 text-gray-500 list-disc list-inside">
             <li>
                 You agree to indemnify and hold Da freepng harmless from any claims or damages arising out of your use of Da freepng.
             </li>
@@ -71,7 +71,7 @@
     </div>
 
     <div class="mb-8">
-        <h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">6. Governing Law and Jurisdiction</h2>
+        <h2 class="mb-2 text-lg font-semibold text-gray-900">6. Governing Law and Jurisdiction</h2>
     </div>
 
 </section>

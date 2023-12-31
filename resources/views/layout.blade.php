@@ -16,7 +16,7 @@ $logoPath = "/images/logo.png";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ $siteDescription }}">
-    <meta name="keywords" content="{{ $keyWords }}">
+    <meta name="keywords" content="@yield('keywords', $keyWords)">
 
     <!-- Open Graph (OG) meta tags for social media -->
     <meta property="og:title" content="{{ $siteTitle }}">
@@ -28,13 +28,15 @@ $logoPath = "/images/logo.png";
     <!-- Favicon -->
     <link rel="icon" href="{{ asset($logoPath) }}" type="image/png">
 
+    <!-- font awe -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- other links -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet" />
     <title>@yield("title", $siteTitle)</title>
 
     <!-- tailwind css -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
 
     @vite(['resources/css/app.css','resources/js/app.js'])
 
@@ -50,12 +52,14 @@ $logoPath = "/images/logo.png";
 </head>
 
 <body class="flex min-h-screen flex-col">
-
-    @include("include.nav")
+    <header class="sticky top-0 left-0 z-50 backdrop:blur-md">
+        @include("include.nav")
+    </header>
     <main class="flex-1">
         @yield("section")
     </main>
     @include("include.footer")
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
 </body>
 

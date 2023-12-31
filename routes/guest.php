@@ -4,7 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GuestController;
 
 
-Route::get("/", [GuestController::class, "index"]);
+Route::get("/", [GuestController::class, "index"])->name("index");
+Route::get("/get", [GuestController::class, "getImageData"])->name("index.get");
+
+
+
+
 Route::get("/contact", [GuestController::class, "contact"]);
 Route::get("/about", [GuestController::class, "about"]);
 Route::get("/privacy-policy", [GuestController::class, "privacyPolicy"]);

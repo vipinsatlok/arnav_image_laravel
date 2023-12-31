@@ -4,23 +4,55 @@
 <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
     @include("include.banner")
     @include("include.search")
-    @include("include.upload")
 
 
 
-    @if ($images->count() > 0)
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-5">
-        @foreach ($images as $image)
-        @include("include.imageCard", ['fileName' => $image->fileName, 'tags' => $image->tags, 'fileSize' => $image->fileSize, 'title' => $image->title])
-        @endforeach
+    @if (count($image) > 0)
+    <div id="blogs-wrapper" class="scrolling-pagination">
+        @include("include.homeImages", ["image" => $image])
     </div>
-    @include("include.pagination", ['images' => $images])
     @else
-    <div class="my-5 p-5 text-gray-600 flex w-full justify-center items-center">No Data Found</div>
+    <div class="flex w-full h-[200px] justify-center mt-10 font-bold items-center text-4xl animate-pulse">
+        No Data Found
+    </div>
     @endif
 
 
 
 </div>
-<script src="{{ asset('js/uploadImage.js') }}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="//unpkg.com/jscroll/dist/jquery.jscroll.min.js"></script>
+<script type="text/javascript">
+    var page = 2;
+    var lastPage = Number("{{ $image->lastPage() }}")
+
+    $(document).ready(function() {
+        $(window).scroll(function() {
+            if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
+                if (lastPage >= page) {
+                    loadMoreData(page);
+                    page++;
+                }
+            }
+        });
+    });
+
+    function loadMoreData(page) {
+        $.ajax({
+            url: '{{ route("index.get") }}',
+            type: 'get',
+            data: {
+                page: page
+            },
+            dataType: 'json',
+            success: function(response) {
+                if (response["status"] == true) {
+                    $('#blogs-wrapper').append(response["html"]);
+                }
+            }
+            // blogs-wrapper
+        });
+    }
+</script>
 @endsection
