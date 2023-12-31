@@ -58,7 +58,6 @@ $tags = explode(', ', $image->tags);
                 $formattedDimensions = $width . ' x' . $height;
                 @endphp
 
-
                 Dimension : {{ $formattedDimensions }}
             </span>
         </div>
@@ -70,7 +69,7 @@ $tags = explode(', ', $image->tags);
         <div class="border border-gray-300 p-2 block w-full">
             @foreach ($tags as $tag)
             <span class="bg-gray-300 m-2 inline-block max-w-xs cursor-pointer p-1 px-2 text-xs">
-                <a class="w-max" href="/?search=tags">
+                <a class="w-max" href="/?search={{ $tag }}">
                     {{$tag}}
                 </a>
             </span>

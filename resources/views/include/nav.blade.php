@@ -28,13 +28,13 @@ return $class;
                 </li>
                 @endforeach
 
-                @auth
                 <li class="block py-2 px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-500 md:p-0">
                     <a href="mailto:contact@digitalapnao.com?subject=Hello">
                         {{ 'Contact' }}
                     </a>
                 </li>
-
+                
+                @auth
                 <li class="block py-2 px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-500 md:p-0">
                     <a href="{{ route('admin.image') }}">
                         {{ 'Admin' }}

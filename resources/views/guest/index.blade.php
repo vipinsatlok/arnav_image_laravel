@@ -2,7 +2,10 @@
 
 @section("section")
 <div class="max-w-screen-xl relative flex flex-col flex-wrap justify-between mx-auto p-4">
+
+    @if (!request('search'))
     @include("include.banner")
+    @endif
 
     @if (count($image) > 0)
     <div id="blogs-wrapper" class="scrolling-pagination">
