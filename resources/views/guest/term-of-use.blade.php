@@ -70,9 +70,9 @@
         </ul>
     </div>
 
-    <div class="mb-8">
+    <!-- <div class="mb-8">
         <h2 class="mb-2 text-lg font-semibold text-gray-900">6. Governing Law and Jurisdiction</h2>
-    </div>
+    </div> -->
 
 </section>
 

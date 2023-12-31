@@ -2,10 +2,13 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
+
+
     /**
      * Register any application services.
      *
@@ -28,5 +31,8 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('*', function ($view) use ($navData) {
             $view->with('navLinks', $navData);
         });
+
+        View::share('primary', 'bg-orange-500');
+        View::share('siteColors', ['bg-orange-500' => '', 'secondary' => 'bg-gray-300']);
     }
 }

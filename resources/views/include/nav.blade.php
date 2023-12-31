@@ -1,7 +1,7 @@
 @php
 function getActiveClass($pageName = "") {
 $con = request()->is($pageName);
-$class = $con ? "block py-2 px-3 text-white bg-orange-500 md:bg-transparent md:text-blue-700 md:p-0" : "block py-2 px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0";
+$class = $con ? "block py-2 px-3 text-white bg-orange-500 md:bg-transparent md:text-blue-700 md:p-0" : "block py-2 px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-500 md:p-0";
 return $class;
 }
 @endphp
@@ -21,23 +21,30 @@ return $class;
         <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
             <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-300 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white md:dark:bg-gray-900">
                 @foreach ($navLinks as $navLink)
-                <li>
-                    <a href="{{ url($navLink['slug']) }}" class="{{ getActiveClass($navLink['slug']) }}">
+                <li class="block py-2 px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent hover:text-orange-500 md:p-0">
+                    <a href="{{ url($navLink['slug']) }}">
                         {{ $navLink['title'] }}
                     </a>
                 </li>
                 @endforeach
 
                 @auth
-                <li>
-                    <a href="{{ route('admin.image') }}" class="{{ getActiveClass('admin/image') }}">
+                <li class="block py-2 px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-500 md:p-0">
+                    <a href="mailto:contact@digitalapnao.com?subject=Hello">
+                        {{ 'Contact' }}
+                    </a>
+                </li>
+
+                <li class="block py-2 px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-500 md:p-0">
+                    <a href="{{ route('admin.image') }}">
                         {{ 'Admin' }}
                     </a>
                 </li>
-                <li>
+
+                <li class="block py-2 px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-500 md:p-0">
                     <form action="{{ route('logout') }}" method="post">
                         @csrf
-                        <a class="{{ getActiveClass('logut') }}">
+                        <a>
                             <button type="submit">
                                 {{ 'Logout' }}
                             </button>
@@ -48,4 +55,9 @@ return $class;
             </ul>
         </div>
     </div>
+    @if (!request()->route()->named('admin.*'))
+    <div class="max-w-screen-xl w-full flex flex-wrap items-center justify-between mx-auto p-4">
+        @include("include.search")
+    </div>
+    @endif
 </nav>

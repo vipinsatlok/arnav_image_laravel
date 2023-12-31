@@ -61,11 +61,15 @@ class GuestController extends Controller
     {
         $image = Image::where('file_name', $imageId . '.png')->first();
         $tags = $image->tags;
-        $title = $image->title;
 
-        $imageData = Image::where('title', 'like', '%' . $title . '%')
-            ->orWhere('tags', 'like', '%' . $tags . '%')
-            ->paginate(20);
+        $imageData = Image::where(function ($query) use ($tags) {
+            foreach (explode(',', $tags) as $tag) {
+                $query->orWhere('tags', 'like', '%' . trim($tag) . '%');
+            }
+        })
+            ->where('id', '!=', $image->id) // Exclude the original image
+            ->paginate(50);
+
 
         return view("guest.downlaodImage", ["image" => $image, "imageData" => $imageData]);
     }

@@ -1,18 +1,18 @@
 <div class="border border-gray-300 w-full overflow-hidden my-5">
     <div class="relative w-full">
         <div>
-            <img src="{{ asset('/images/png-bg.jpg') }}" alt="">
+            <img class="opacity-20 w-full" src="{{ asset('/images/png-bg.webp') }}" alt="">
         </div>
-        <div class="absolute top-0 left-0 flex justify-center items-center w-full h-full">
+        <div class="absolute top-0 left-0 flex justify-center items-center w-full h-full overflow-hidden">
             <a href="/{{  Str::beforeLast($d->file_name, '.'); }}">
-                <img loading="Loading..." oncontextmenu="return false;" class="h-auto min-w-full p-5 transition-all hover:scale-105" src="{{ asset('/uploads/'.$d->file_name) }}" alt="image description">
+                <img loading="Loading..." oncontextmenu="return false;" class="w-full p-5 transition-all hover:scale-105" src="{{ asset('/uploads/'.$d->file_name) }}" alt="image description">
             </a>
         </div>
     </div>
-    <div class="flex text-[15px] justify-between pt-3 px-5 bg-orange-300">
+    <div class="flex text-[15px] justify-between pt-3 px-5 bg-gray-300">
         {{ $d->title }}
     </div>
-    <div class="flex justify-between text-sm bg-orange-300 px-5 pt-1 pb-3">
+    <div class="flex justify-between text-sm bg-gray-300 px-5 pt-1 pb-3">
         <div class="flex flex-col text-gray-700 ">
             <span class="text-xs">
                 SIZE : {{ $d->file_size }} KB

@@ -10,12 +10,12 @@ $tags = explode(', ', $image->tags);
 <div class="max-w-screen-xl flex-col flex items-start flex-wrap justify-between mx-auto p-4">
 
     <!-- image -->
-    <div id="container" class="relative border border-gray-300 p-2 max-w-md max-h-max">
+    <div id="container" class="relative border p-2 max-w-md max-h-max">
         <div class="w-full">
-            <img class="w-full" src="{{ asset('/images/png-bg.jpg') }}" alt="">
+            <img class="opacity-20 w-full" src="{{ asset('/images/png-bg.webp') }}" alt="">
         </div>
-        <div class="absolute top-0 left-0 flex justify-center items-center w-full h-full">
-            <img loading="Loading..." oncontextmenu="return false;" class="transition-all hover:scale-105" src="{{ asset('/uploads/'.Str::finish($imageId, '.png')) }}" alt="image description">
+        <div class="absolute top-0 left-0 flex justify-center items-center w-full h-full overflow-hidden">
+            <img loading="Loading..." oncontextmenu="return false;" class="transition-all w-full hover:scale-105" src="{{ asset('/uploads/'.Str::finish($imageId, '.png')) }}" alt="image description">
         </div>
     </div>
 
@@ -35,9 +35,12 @@ $tags = explode(', ', $image->tags);
     </div>
 
     <!-- title and other data -->
-    <div class="bg-orange-500 w-full flex flex-col text-white px-5 py-10">
+    <div class="bg-gray-100 w-full flex flex-col text-gray-700 px-5 py-10">
         <h2 class="text-xl font-semibold my-3">Image Details</h2>
         <div class="flex flex-col">
+            <span class="text-sm uppercase">
+                title : {{ $image->title}}
+            </span>
             <span class="text-sm uppercase">
                 SIZE : {{ $image->file_size}} KB
             </span>
@@ -56,17 +59,23 @@ $tags = explode(', ', $image->tags);
                 @endphp
 
 
-                Dimention : {{ $formattedDimensions }}
+                Dimension : {{ $formattedDimensions }}
             </span>
         </div>
     </div>
 
     <!-- tags -->
-    <div>
+    <div class="w-full">
         <h2 class="text-xl font-semibold my-3">Tags</h2>
-        @foreach ($tags as $tag)
-        <span class="bg-gray-300 p-1 px-2 text-xs">{{ $tag }}</span>
-        @endforeach
+        <div class="border border-gray-300 p-2 block w-full">
+            @foreach ($tags as $tag)
+            <span class="bg-gray-300 m-2 inline-block max-w-xs cursor-pointer p-1 px-2 text-xs">
+                <a class="w-max" href="/?search=tags">
+                    {{$tag}}
+                </a>
+            </span>
+            @endforeach
+        </div>
     </div>
 
     <!-- social buttons -->

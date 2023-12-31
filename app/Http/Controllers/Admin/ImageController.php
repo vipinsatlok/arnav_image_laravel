@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Image;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class ImageController extends Controller
 {
@@ -18,7 +17,6 @@ class ImageController extends Controller
     {
 
         $data = Image::paginate(10);
-
         return view("admin.image.image", compact("data"));
     }
 
@@ -42,18 +40,21 @@ class ImageController extends Controller
     {
         // validate data
         $request->validate([
-            'file' => 'required|mimes:png|max:5120',
+            'file' => 'required|mimes:png|max:3060',
             'tags' => 'required|string',
             'title' => 'required|string'
         ]);
 
         $file = $request->file('file');
+        $compress_percent = 10;
+        $width = getimagesize($file->path())[0] / $compress_percent;
+        $height = getimagesize($file->path())[1] / $compress_percent;
         $file_size = round($file->getSize() / 1024);
         $file_name  = uniqid() . ".png";
         $file_dimention = getimagesize($file->path())[0] . ', ' . getimagesize($file->path())[1]; // width, height
         $file->move(public_path('uploads'), $file_name);
 
-        $imageData = [
+        $ImageData = [
             'title' => $request->input('title'),
             'tags' => $request->input('tags'),
             'file_size' => $file_size,
@@ -61,7 +62,7 @@ class ImageController extends Controller
             'file_name' => $file_name,
         ];
 
-        Image::create($imageData);
+        Image::create($ImageData);
 
         return redirect()->route("admin.image")->with('success', 'File uploaded successfully');
     }

@@ -20,8 +20,10 @@
         </p>
 
         <p class="text-base mt-3 text-gray-600 mb-1">
-            <strong> ### Cookies and Web Beacons</strong>
-            Similar to other websites, Da Feeling utilizes 'cookies'. These cookies store data such as visitor preferences and the accessed/visited website pages. This data aids in enhancing user experience by tailoring our webpage content based on browser types and other related information.
+        <h2 class="text-2xl mb-1 font-semibold">
+            Cookies and Web Beacons
+        </h2>
+        Similar to other websites, Da Feeling utilizes 'cookies'. These cookies store data such as visitor preferences and the accessed/visited website pages. This data aids in enhancing user experience by tailoring our webpage content based on browser types and other related information.
         </p>
     </div>
 

@@ -19,6 +19,27 @@ h1 {
     padding-left: 15px;
     padding-right: 15px;
     color: white;
-    background-color: darkgoldenrod;
+    background-color: lightgreen;
     cursor: pointer;
+    transition: all ease-in 0.2s;
+    scale: 1;
+}
+
+#social-links ul li:hover {
+    scale: 1.3;
+}
+
+/* Optionally, hide the scrollbar thumb for WebKit-based browsers */
+*::-webkit-scrollbar {
+    width: 0;
+}
+
+/* Optionally, hide the scrollbar thumb for Firefox */
+* {
+    scrollbar-width: none;
+}
+
+/* Optionally, hide the scrollbar thumb for Edge */
+* {
+    -ms-overflow-style: none;
 }

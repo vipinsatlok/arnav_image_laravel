@@ -1,11 +1,8 @@
 @extends("layout")
 
 @section("section")
-<div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+<div class="max-w-screen-xl relative flex flex-col flex-wrap justify-between mx-auto p-4">
     @include("include.banner")
-    @include("include.search")
-
-
 
     @if (count($image) > 0)
     <div id="blogs-wrapper" class="scrolling-pagination">
@@ -29,7 +26,7 @@
 
     $(document).ready(function() {
         $(window).scroll(function() {
-            if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
+            if ($(window).scrollTop() - 200 + $(window).height() >= ($(document).height() - 300)) {
                 if (lastPage >= page) {
                     loadMoreData(page);
                     page++;
