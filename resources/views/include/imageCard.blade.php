@@ -1,4 +1,4 @@
-<div class="border border-gray-300 w-full overflow-hidden my-5">
+<div class="border border-gray-300 w-full overflow-hidden">
     <div class="relative w-full">
         <div>
             <img class="opacity-20 w-full" src="{{ asset('/images/png-bg.webp') }}" alt="">

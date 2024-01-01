@@ -18,7 +18,7 @@ class GuestController extends Controller
                 ->orWhere('tags', 'like', '%' . $query . '%')
                 ->paginate(4);
         } else {
-            $image = Image::paginate(4);
+            $image = Image::paginate(8);
         }
 
         return view("guest.index", compact('image'));
@@ -27,7 +27,7 @@ class GuestController extends Controller
     public function getImageData()
     {
 
-        $image = Image::paginate(4);
+        $image = Image::paginate(8);
         $html = view("include.homeImages", compact('image'))->render();
 
         return response()->json([

@@ -59,6 +59,17 @@ $logoPath = "/images/logo.webp";
     @include("include.footer")
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+
+
+
+    <script>
+        const searchToggle = document.getElementById("searchToggle")
+        const searchSection = document.getElementById("searchSection")
+
+        searchToggle.addEventListener("click", () => {
+            searchSection.classList.toggle("hidden")
+        })
+    </script>
 </body>
 
 </html>
