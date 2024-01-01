@@ -11,6 +11,7 @@ $tags = explode(', ', $image->tags);
 
     <!-- image -->
     <div id="container" class="relative border p-2 max-w-md max-h-max">
+        <div class="absolute top-0 left-0 w-full h-full bg-white z-50 opacity-0 cursor-not-allowed"></div>
         <div class="w-full">
             <img class="opacity-20 w-full" src="{{ asset('/images/png-bg.webp') }}" alt="">
         </div>
@@ -35,31 +36,37 @@ $tags = explode(', ', $image->tags);
     </div>
 
     <!-- title and other data -->
-    <div class="bg-gray-100 w-full flex flex-col text-gray-700 px-5 py-10">
-        <h2 class="text-xl font-semibold my-3">Image Details</h2>
-        <div class="flex flex-col">
-            <span class="text-sm uppercase">
-                title : {{ $image->title}}
-            </span>
-            <span class="text-sm uppercase">
-                SIZE : {{ $image->file_size}} KB
-            </span>
-            <span class="text-sm uppercase">
+    <div class="bg-gray-100 w-full flex  justify-between text-gray-700 px-5 py-10">
+        <div>
 
-                @php
-                // Convert the string into an array
-                $dimensions = explode(',', $image->file_dimention);
+            <h2 class="text-xl font-semibold my-3">Image Details</h2>
+            <div class="flex flex-col">
+                <span class="text-sm uppercase">
+                    title : {{ $image->title}}
+                </span>
+                <span class="text-sm uppercase">
+                    SIZE : {{ $image->file_size}} KB
+                </span>
+                <span class="text-sm uppercase">
 
-                // Get the width and height from the array
-                $width = $dimensions[0];
-                $height = $dimensions[1];
+                    @php
+                    // Convert the string into an array
+                    $dimensions = explode(',', $image->file_dimention);
 
-                // Format the dimensions as "widthxheight"
-                $formattedDimensions = $width . ' x' . $height;
-                @endphp
+                    // Get the width and height from the array
+                    $width = $dimensions[0];
+                    $height = $dimensions[1];
 
-                Dimension : {{ $formattedDimensions }}
-            </span>
+                    // Format the dimensions as "widthxheight"
+                    $formattedDimensions = $width . ' x' . $height;
+                    @endphp
+
+                    Dimension : {{ $formattedDimensions }}
+                </span>
+            </div>
+        </div>
+        <div>
+
         </div>
     </div>
 

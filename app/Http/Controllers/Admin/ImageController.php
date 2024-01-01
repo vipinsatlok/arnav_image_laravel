@@ -41,7 +41,7 @@ class ImageController extends Controller
         // validate data
         $request->validate([
             'file' => 'required|mimes:png|max:3060',
-            'tags' => 'required|string',
+            'tags' => 'required',
             'title' => 'required|string'
         ]);
 

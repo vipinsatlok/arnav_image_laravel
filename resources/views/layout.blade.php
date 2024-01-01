@@ -55,13 +55,11 @@ $logoPath = "/images/logo.webp";
     </header>
     <main class="flex-1 overflow-auto relative">
         @yield("section")
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2890677304009204" data-ad-slot="6291010718" data-ad-format="auto" data-full-width-responsive="true"></ins>
     </main>
     @include("include.footer")
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
-
-
-
     <script>
         const searchToggle = document.getElementById("searchToggle")
         const searchSection = document.getElementById("searchSection")
