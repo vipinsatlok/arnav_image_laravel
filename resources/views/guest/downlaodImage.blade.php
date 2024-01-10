@@ -1,17 +1,48 @@
-@extends("layout")
-
-@section("keywords", $image->tags)
-@section("section")
-
 @php
 $imageId = Str::beforeLast($image->file_name, '.');
 $tags = explode(', ', $image->tags);
 @endphp
-<div class="max-w-screen-xl flex-col flex items-start flex-wrap justify-between mx-auto p-4">
+
+@extends("layout")
+
+@section("keywords", $image->tags)
+@section("iconPath", asset('/uploads/'.Str::finish($imageId, '.png')))
+@section("section")
+
+
+<div class="max-w-screen-xl relative flex-col flex items-start flex-wrap justify-between mx-auto p-4">
+
+    <!-- downlaod section -->
+    <div id="downloadModal" style="backdrop-filter: blur(10px);" class="absolute top-0 left-0 w-full h-full justify-center backdrop-blur-md hidden z-40">
+        <div class="md:w-1/2 relative w-11/12 flex flex-col gap-5 items-center min-h-[500px] bg-white border border-gray-300 p-5 rounded-lg">
+
+            <!-- close -->
+            <div onclick="closeModal()" class="absolute top-3 right-3 w-6 h-6 bg-gray-300 text-gray-700 rounded-full cursor-pointer flex justify-center items-center">
+                X
+            </div>
+
+            <!--  ad1 -->
+            <div class="h-40 mt-5 w-full text-3xl flex justify-center border-b border-gray-300 items-center">
+                ad 1
+            </div>
+
+            <div class="flex flex-col items-center w-full">
+                <p class="text-gray-500 mb-5 block">Your image downloadn in</p>
+                <span id="countDown" class="text-gray-700 text-6xl block font-semibold">10 SEC</span>
+                <p class="text-gray-500 mt-4 text-center">Your download should start automatically, if not <a id="imageDownload" class="text-gray-700">click here.</a></p>
+            </div>
+
+            <!--  ad2 -->
+            <div class="w-full h-full text-3xl flex justify-center border-t border-gray-300 items-center">
+                ad 2
+            </div>
+        </div>
+    </div>
+
 
     <!-- image -->
-    <div id="container" class="relative border p-2 max-w-md max-h-max">
-        <div class="absolute top-0 left-0 w-full h-full bg-white z-50 opacity-0 cursor-not-allowed"></div>
+    <div id="container" class="relative border p-2 max-w-md max-h-max z-auto">
+        <div class="absolute top-0 left-0 w-full h-full bg-white z-30 opacity-0 cursor-not-allowed"></div>
         <div class="w-full">
             <img class="opacity-20 w-full" src="{{ asset('/images/png-bg.webp') }}" alt="">
         </div>

@@ -10,17 +10,20 @@ function downloadImage() {
     document.body.appendChild(downloadLink);
     downloadLink.click();
 
+    const d = document.getElementById("imageDownload");
+    d.href = downloadUrl;
+    d.download = `digitalapnao-${imageId}s.png`;
+    
     document.body.removeChild(downloadLink);
 }
-const buttonHtml = document.getElementById("imageDownloadButton").innerHTML;
 
 function updateTimer() {
-    const button = document.getElementById("imageDownloadButton");
-    button.innerText = `Download in: ${countdown} sec`;
+    const button = document.getElementById("countDown");
+    button.innerText = `${countdown} SEC`;
 
     if (countdown === 0) {
         clearInterval(timerInterval);
-        button.innerHTML = buttonHtml;
+        button.innerHTML = "Downloaded!";
         downloadImage();
     }
 
@@ -28,6 +31,12 @@ function updateTimer() {
 }
 
 function startCountdown() {
-    document.getElementById("imageDownloadButton").disabled = true;
+    document.getElementById("downloadModal").style.display = "flex";
+
     timerInterval = setInterval(updateTimer, 1000);
+}
+
+function closeModal() {
+    document.getElementById("downloadModal").style.display = "none";
+    window.location.href = window.location.href;
 }

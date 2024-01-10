@@ -21,15 +21,16 @@ $logoPath = "/images/logo.webp";
     <!-- Open Graph (OG) meta tags for social media -->
     <meta property="og:title" content="{{ $siteTitle }}">
     <meta property="og:description" content="{{ $siteDescription  }}">
-    <meta property="og:image" content="{{ asset($iconPath) }}">
+    <meta property="og:image" content="@yield('iconPath', $iconPath)">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:type" content="image website">
 
     <!-- Favicon -->
-    <link rel="icon" href="{{ asset($logoPath) }}" type="image/webp">
+    <link rel="icon" href="{{ $iconPath }}" type="image/webp">
 
     <!-- font awe -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <!-- other links -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet" />
     <title>@yield("title", $siteTitle)</title>
@@ -58,6 +59,18 @@ $logoPath = "/images/logo.webp";
         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2890677304009204" data-ad-slot="6291010718" data-ad-format="auto" data-full-width-responsive="true"></ins>
     </main>
     @include("include.footer")
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NKK8YZ0PD2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-NKK8YZ0PD2');
+    </script>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
     <script>
