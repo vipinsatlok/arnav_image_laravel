@@ -9,7 +9,6 @@ $tags = explode(', ', $image->tags);
 @section("iconPath", asset('/uploads/'.Str::finish($imageId, '.png')))
 @section("section")
 
-
 <div class="max-w-screen-xl relative flex-col flex items-start flex-wrap justify-between mx-auto p-4">
 
     <!-- downlaod section -->
@@ -28,7 +27,7 @@ $tags = explode(', ', $image->tags);
 
             <div class="flex flex-col items-center w-full">
                 <p class="text-gray-500 mb-5 block">Your image downloadn in</p>
-                <span id="countDown" class="text-gray-700 text-6xl block font-semibold">10 SEC</span>
+                <span id="countDown" class="text-gray-700 md:text-6xl text-3xl block font-semibold">10 SEC</span>
                 <p class="text-gray-500 mt-4 text-center">Your download should start automatically, if not <a id="imageDownload" class="text-gray-700">click here.</a></p>
             </div>
 
